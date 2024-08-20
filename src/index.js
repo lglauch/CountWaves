@@ -16,13 +16,20 @@ function save()
 	if (result > 0)
 	{
 		savedmsg.innerText += " - " + result
-		result = 0
 		counter.textContent = result
+		result = 0
 		savedcorrect.textContent = "Saved successfully!"
 		savedcorrect.style.display = 'block'
-		setTimeout(() => {
+		/* setTimeout(() => {
 			savedcorrect.style.display = 'none';
-		}, 1500);
-
+		}, 1500); */
+		$('#savedmsg').show('slow').delay(2000).hide('slow');
 	}
+}
+
+let username;
+
+document.getElementById("user").onclick = function(){
+	username = document.getElementById("myInput").value
+	document.getElementById("myh1").textContent = `Welcome ${username}, have fun!`
 }
